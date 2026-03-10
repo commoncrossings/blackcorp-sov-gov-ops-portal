@@ -1,7 +1,5 @@
-NOTE — PROVISIONAL TEXT  
-This document is a placeholder for the forthcoming Helix License v1.  
-It is NOT legally binding and is provided for informational and developmental purposes only.  
-The finalized, authoritative Helix License v1 will supersede this placeholder upon publication.
+NOTE — BINDING TEXT  
+This document constitutes the operative licensing terms for all Helix governance materials in this repository until superseded by Helix License v1.
 
 # Helix License v1 (Placeholder Draft)
 
