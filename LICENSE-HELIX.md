@@ -1,3 +1,8 @@
+NOTE — PROVISIONAL TEXT  
+This document is a placeholder for the forthcoming Helix License v1.  
+It is NOT legally binding and is provided for informational and developmental purposes only.  
+The finalized, authoritative Helix License v1 will supersede this placeholder upon publication.
+
 # Helix License v1 (Placeholder Draft)
 
 > This is a placeholder for the BlackCorp Helix License v1. Until a finalized text is published,
