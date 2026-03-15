@@ -1,0 +1,85 @@
+name: Radius Boundary Log Commit
+
+on:
+  workflow_dispatch:
+    inputs:
+      node_id:
+        description: "Sovereign node identifier (e.g., termux-alpha)"
+        required: true
+        type: string
+      residual:
+        description: "Governing operator residual (R)"
+        required: true
+        type: string
+      status:
+        description: "Adjudication status (accepted/rejected)"
+        required: true
+        type: string
+      coords:
+        description: "Event coordinates (x,y,z)"
+        required: true
+        type: string
+      t:
+        description: "Event time t"
+        required: true
+        type: string
+      payload_hash:
+        description: "Hash/fingerprint of neutral_payload"
+        required: true
+        type: string
+      reason:
+        description: "Rejection reason (if any)"
+        required: false
+        type: string
+
+jobs:
+  commit-boundary-log:
+    runs-on: ubuntu-latest
+
+    env:
+      TARGET_BRANCH: exponent3
+
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_BRANCH }}
+
+      - name: Prepare log directory
+        run: |
+          mkdir -p logs/boundary
+
+      - name: Build boundary log file
+        id: build_log
+        run: |
+          TS=$(date -u +"%Y%m%dT%H%M%SZ")
+          SAFE_NODE=$(echo "${{ github.event.inputs.node_id }}" | tr ' ' '_')
+          FILE="logs/boundary/${TS}_${SAFE_NODE}.boundary.json"
+
+          cat > "$FILE" << 'EOF'
+          {
+            "jurisdiction": "BLACKCORP_RADIUS",
+            "node_id": "${{ github.event.inputs.node_id }}",
+            "status": "${{ github.event.inputs.status }}",
+            "residual": "${{ github.event.inputs.residual }}",
+            "coords": "${{ github.event.inputs.coords }}",
+            "t": "${{ github.event.inputs.t }}",
+            "payload_hash": "${{ github.event.inputs.payload_hash }}",
+            "reason": "${{ github.event.inputs.reason }}",
+            "branch": "${{ env.TARGET_BRANCH }}",
+            "source": "STRSL_RADIUS_PIPELINE",
+            "github_run_id": "${{ github.run_id }}",
+            "timestamp_utc": "$TS"
+          }
+          EOF
+
+          echo "file_path=$FILE" >> $GITHUB_OUTPUT
+
+      - name: Commit and push boundary log
+        run: |
+          git config user.name "blackcorp-radius-bot"
+          git config user.email "radius-bot@users.noreply.github.com"
+
+          git add "${{ steps.build_log.outputs.file_path }}"
+          git commit -m "radius: boundary-log ${{ github.event.inputs.node_id }} @ ${{ github.event.inputs.t }}" || exit 0
+          git push origin "$TARGET_BRANCH"
