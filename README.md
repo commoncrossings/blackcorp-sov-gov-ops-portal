@@ -1,196 +1,103 @@
-# blackcorp-sov-gov-ops-portal
+ere is a clean, public‑facing README rewritten specifically for a public GitHub repository.
+It removes internal‑only details, removes ENU/MQTT/private‑mesh references, and presents the project as a ceremonial, governance‑theory, non‑operational portal — exactly what a public audience should see.
 
-Absolutely — I can create a clean, copy‑ready **README.md** for the repository  
-**https://github.com/commoncrossings/blackcorp-sov-gov-ops-portal**,  
-and I’ll base it directly on the structural logic, chamber‑flow, and governance‑spine definitions contained in your uploaded **black pillar .md** document.
+It is copy‑ready and safe to paste directly into:
 
-Below is a **fully‑formed README** you can paste directly into the repo.  
-It is written to match the tone, architecture, and operational philosophy of the Black Pillar system, while remaining clear, auditable, and GitHub‑appropriate.
+https://github.com/commoncrossings/blackcorp-sov-gov-ops-portal
 
----
+BLACKCORP — SOVEREIGN GOVERNANCE OPERATIONS PORTAL
+Ceremonial Front Page • Constitutional Framework • Public Governance Surface
+This repository hosts the public, ceremonial governance portal for the BlackCorp sovereign digital jurisdiction.
+It presents the conceptual architecture, constitutional framing, and governance‑flow model that define the Black Pillar system.
 
-# **BLACKCORP SOVEREIGN GOVERNANCE OPERATIONS PORTAL**  
-### *Constitutional Spine • Pillar Mesh • Policy‑Flow Engine*
+This is a non‑platform, non‑commercial, static governance surface.
+It contains no operational code, no backend, and no private infrastructure.
 
-This repository contains the operational shell, governance logic, and constitutional runtime for the **BlackCorp Sovereign Governance Operations Portal**. It implements the *Black Pillar* architecture: a tri‑chamber constitutional system backed by deterministic `sed/awk` dialects, MQTT‑based signal routing, and a verifiable policy‑flow pipeline.
+🜁 Purpose
+The goal of this portal is to provide:
 
----
+a public‑facing explanation of the BlackCorp governance model
 
-## **🜁 System Overview**
+a ceremonial front door for the jurisdiction
 
-The Black Pillar defines a **Constitutional Spine** composed of three chambers:
+a transparent description of the Constitutional Spine
 
-| Chamber | Role | Function |
-|--------|------|----------|
-| **Legislative** | Proposal | Introduces new policy versions (`PROPOSAL::vX.Y`) |
-| **Executive** | Validation | Performs signature verification and operational feasibility checks |
-| **Judicial** | Ratification | Performs constitutional alignment and authorizes distribution |
+a reference architecture for observers, researchers, and collaborators
 
-Signals flow through the spine using strict zone‑based routing, as defined in the uploaded document:
+This repository is intentionally minimal, auditable, and static.
 
-> “Zone Isolation: the `sed` transformations prepend a `SIG_INT` or `SIG_EXT` tag, making the data type visually and logically distinct for the next chamber.”  
-> “Leak Protection: Restricted data detected in the spine from an external source is instantly purged.”  
-> *(black pillar .md)*
+🜂 The Black Pillar Framework (Public Summary)
+The Black Pillar describes a tri‑chamber constitutional structure:
 
-This repository implements that logic in modular, auditable components.
+Chamber	Public Role
+Legislative	Introduces proposals and conceptual policy versions
+Executive	Reviews proposals for coherence and feasibility
+Judicial	Confirms alignment with the constitutional baseline
 
----
+This public repository includes symbolic examples of how these chambers interact, using simplified sed/awk‑style logic to illustrate the governance flow.
 
-## **🜂 Core Components**
+No private routing, no internal addresses, and no operational signals are included here.
 
-### **1. continuity_spine/**
-Implements the routing logic for internal and external signals.
+🜃 Public Files
+This repository may include:
 
-- `SIG_INT::` — internal, chamber‑validated  
-- `SIG_EXT::` — external, export‑bound  
-- Restricted patterns (`identity/private`, `keys/`) are looped back to `.1` and purged if sourced externally.
+index.html — Public jurisdictional front door
 
-### **2. chambers/**
-Each chamber is represented as a deterministic filter:
+README.md — This document
 
-- `legislative.awk`
-- `executive.awk`
-- `judicial.awk`
+TERMS.md — Terms of participation in the public governance space
 
-Each script is stateless, auditable, and copy‑safe.
+PRIVACY.md — Public privacy posture
 
-### **3. policy-flow.awk**
-The final governance layer.  
-This file governs the lifecycle of `radius-policy.yaml` and ensures no policy is enacted without full tri‑chamber traversal.
+RITUAL.md — Ceremonial framing and meaning of this portal
 
-Excerpt from the uploaded document:
+LICENSE-HELIX.md — Helix License v1 (public sovereign licensing framework)
 
-> “This logic ensures that policy doesn’t just exist — it circulates through the necessary gates of authority.”  
-> *(black pillar .md)*
+assets/ — Visual marks, styles, and static resources
 
----
+All content is public, non‑operational, and safe for open distribution.
 
-## **📜 Policy‑Flow Circuit (AWK Dialect)**
+🜄 Public Governance Model (Illustrative Only)
+The repository includes symbolic examples of:
 
-```awk
-# policy-flow.awk
-# Manages the propagation of "Legislative Versions" across the Spine
+constitutional flow
 
-BEGIN { 
-    FS = "::"
-    OFS = " -> "
-}
+chamber sequencing
 
-# 1. PROPOSAL STAGE (Legislative)
- /^PROPOSAL/ {
-    version = $2
-    status = "INITIATED"
-    print "[CHAMBER:LEGISLATIVE] Proposal Received: " version
-}
+policy‑flow logic
 
-# 2. REVIEW STAGE (Executive)
-{
-    if (status == "INITIATED") {
-        print "[CHAMBER:EXECUTIVE] Reviewing Policy Version: " version
-        status = "VALIDATED"
-    }
-}
+governance‑layer transformations
 
-# 3. RATIFICATION STAGE (Judicial)
-END {
-    if (length(version) > 0 && status == "VALIDATED") {
-        print "[CHAMBER:JUDICIAL] Alignment Confirmed. ENACTING POLICY."
-        print "DISTRIBUTE " version " TO ALL NODES"
-    }
-}
-```
+These examples are illustrative, not executable.
+They exist to show how the BlackCorp jurisdiction conceptualizes governance, not how internal systems operate.
 
----
+🜅 Scope & Limitations
+This repository:
 
-## **🜄 Signal Routing Model**
+does not contain private infrastructure
 
-The routing logic is implemented using `sed`/`awk` transformations:
+does not expose internal ENU anchors
 
-- **EXPORT Zone** → Midway Gateway (`10.0.0.5`)
-- **RESTRICTED Zone** → Pillar Core (`10.0.0.1`)
-- **SHADOW COPY** → Audit Spine (`10.0.0.4`)
+does not include MQTT topics or operational routing
 
-From the uploaded document:
+does not include identity, keys, or runtime logic
 
-> “All INTERNAL signals are automatically duplicated to the audit_spine, fulfilling the Shadow of the Pillar requirement.”
+does not function as a software platform
 
----
+It is a public governance artifact, not a technical system.
 
-## **🜃 MQTT Backbone Integration**
+🜆 Status
+This portal is an experimental governance construct.
+It is provided for public understanding, ceremonial framing, and conceptual exploration.
 
-Environment variables (as shown in your terminal capture) define:
+Always consult qualified counsel before applying any governance model to a physical jurisdiction.
 
-- `HIVEMQ_BROKER`
-- `MQTT_TOPIC_HEARTBEAT`
-- `MQTT_TOPIC_ANCHOR`
-- `MQTT_TOPIC_MAP`
+If you want, I can also generate:
 
-These map the Pillar’s chambers to the HiveMQ mesh.
+a public‑facing index.html
 
----
+a public Helix License v1
 
-## **🜅 Repository Purpose**
+a visual diagram of the Constitutional Spine
 
-This repository serves as:
-
-- The **canonical implementation** of the Black Pillar governance model  
-- A **reference architecture** for sovereign digital jurisdictions  
-- A **runtime shell** for policy propagation, audit mirroring, and chamber‑based validation  
-- A **teaching framework** for AXIS students and operators  
-
----
-
-## **🜆 Getting Started**
-
-```bash
-gh repo clone commoncrossings/blackcorp-sov-gov-ops-portal
-cd blackcorp-sov-gov-ops-portal
-```
-
-If GitHub CLI prompts for authentication:
-
-```bash
-gh auth login
-```
-
----
-
-## **🜇 Status**
-
-**Circuit Closed.**  
-The Black Pillar is operationally coherent and ready for integration with the Sovereign Ops Portal.
-
----
-
-If you'd like, I can also:
-
-- generate a **LICENSE**,  
-- scaffold the **folder structure**,  
-- create a **CONTRIBUTING.md**,  
-- or produce a **diagram** of the Constitutional Spine.
-
-Just tell me which direction you want to expand next.
-
-Sovereign governance front page for BlackCorp jurisdiction (ceremonial, non-platform). 4. Visibility:      Public. 5. Initialize:      - Enable: “Add a README file”.      - Disable: any .gitignore or
-license for now (we’ll add Helix manually). 6. Create repository.
-
-# BLACK CORP — SOV GOV OPS PORTAL
-
-This repository hosts the public, ceremonial front page for the BlackCorp sovereign digital jurisdiction.
-
-- **Nature:** Governance space, not a commercial product.
-- **Scope:** Static, auditable, front-end only. No trackers, no third-party scripts.
-- **Law:** Governed by the BlackCorp constitutional blocks and the Helix License (v1).
-
-## Files
-
-- `index.html` — Jurisdictional front door.
-- `LICENSE-HELIX.md` — Helix License v1 (BlackCorp sovereign licensing framework).
-- `TERMS.md` — Terms of participation in the BlackCorp jurisdiction.
-- `PRIVACY.md` — Privacy and security posture for this portal.
-- `RITUAL.md` — Ceremonial framing and operational meaning of this front door.
-- `assets/` — Styles and visual marks.
-
-## Status
-
-This portal is an experimental, non-traditional governance construct. Use at your own risk and always consult qualified counsel before relying on any aspect of this framework in a physical jurisdiction.
+a public governance charter
