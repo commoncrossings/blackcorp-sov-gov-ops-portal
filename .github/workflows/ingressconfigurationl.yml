@@ -1,0 +1,24 @@
+# side-ingress-endpoint.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: intelligence-db-ingress
+  namespace: database-layer
+  annotations:
+    # Restrict ingress to your Houston, TX client IP and AT&T network
+    nginx.ingress.kubernetes.io/whitelist-source-range: "107.116.168.52/32, 107.116.128.0/17"
+    # Optional: Force SSL to protect intelligence data in transit
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ://yourdomain.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: intelligence-db-service
+            port:
+              number: 5432 # Standard database port
