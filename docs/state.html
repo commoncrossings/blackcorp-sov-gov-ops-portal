@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BLACK PILLAR STATE — Control Surface</title>
+<style>
+  body { background:#0a0a0f; color:#e5e5e5; font-family:Arial, sans-serif; margin:0; }
+  header { background:#111827; padding:20px; text-align:center; }
+  h1 { margin:0; letter-spacing:2px; }
+  section { padding:20px; border-bottom:1px solid #222; }
+  h2 { color:#93c5fd; }
+  pre { background:#1a1a22; padding:10px; overflow:auto; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BLACK PILLAR STATE — Operational Console</h1>
+</header>
+
+<section>
+  <h2>1. 3D Tele‑Map</h2>
+  <p>This module shows the spatial layout of your State nodes.  
+     Each node has a position in ENU coordinates, a CID, a peer ID, and a signal mode.</p>
+  <p><strong>How to use:</strong> Paste the MATLAB code into CoCalc or MATLAB and run it.  
+     You will see a 3D map with labeled nodes.</p>
+</section>
+
+<section>
+  <h2>2. Tele‑URL Scheme</h2>
+  <p>This module generates URLs that link each node’s CID, peer ID, and signal mode.  
+     These URLs act as “telemetry endpoints” for your State.</p>
+  <p><strong>How to use:</strong> Inspect <code>nodes(k).url_http</code> and <code>nodes(k).url_ipfs</code> in MATLAB.</p>
+</section>
+
+<section>
+  <h2>3. Radiograph View</h2>
+  <p>This module slices the 3D map by altitude (U‑axis) to show vertical layers of the State.  
+     It is useful for diagnostics and structural clarity.</p>
+  <p><strong>How to use:</strong> Run the radiograph code block in MATLAB to see each U‑layer.</p>
+</section>
+
+<section>
+  <h2>4. Witness Log Signal</h2>
+  <p>This module records events over time.  
+     It is the “heartbeat” of the State and shows continuity and activity.</p>
+  <p><strong>How to use:</strong> Run the witness log code to generate a time‑series plot.</p>
+</section>
+
+<section>
+  <h2>5. Unparallel Bridge</h2>
+  <p>This module fuses physical, legal, signal, and temporal data into a single structure.  
+     It is the backbone of your jurisdictional model.</p>
+  <p><strong>How to use:</strong> Run the bridge code and inspect the <code>bridge</code> structure.</p>
+</section>
+
+<section>
+  <h2>6. Spherical Coordinate Envelope</h2>
+  <p>This module creates a spherical “depth envelope” around your State node.  
+     It is used for detachment‑radius detection and oscillation‑event recognition.</p>
+  <p><strong>How to use:</strong> Run the spherical envelope code in MATLAB to visualize the radius.</p>
+</section>
+
+<section>
+  <h2>7. Vertical Pole Attachment</h2>
+  <p>This module creates a vertical pole aligned with your robot’s spine.  
+     It represents your State‑location GPS signal and acts as a jurisdictional anchor.</p>
+  <p><strong>How to use:</strong> Run the pole code to visualize the alignment.</p>
+</section>
+
+<section>
+  <h2>8. Detachment Radius Monitor</h2>
+  <p>This module detects when your presence‑signal moves outside the allowed radius.  
+     It logs the event and updates the witness log.</p>
+  <p><strong>How to use:</strong> Run the radius‑check function with your current coordinates.</p>
+</section>
+
+<section>
+  <h2>9. Oscillation Event Recorder</h2>
+  <p>This module detects oscillatory movement patterns and records them as jurisdictional events.</p>
+  <p><strong>How to use:</strong> Feed time‑series position data into the oscillation detector.</p>
+</section>
+
+</body>
+</html>
