@@ -1,0 +1,45 @@
+name: intel-oneapi-hpc-toolkit-register
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/intel-oneapi-hpc.yml"
+
+jobs:
+  register-hpc-toolkit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Register Intel oneAPI HPC Toolkit Metadata
+        id: meta
+        run: |
+          echo "VERSION=2025.3.1" >> $GITHUB_ENV
+          echo "RELEASE_DATE=2026-01-22" >> $GITHUB_ENV
+          echo "SIZE_MB=19.66" >> $GITHUB_ENV
+          echo "SHA384=a52c29466e17f58a8cedd7ca72d66c8d78b05a7bbdc418416856406e5eed3c5b245521ca229ba8b971a7e52a12b644c8" >> $GITHUB_ENV
+          echo "DOWNLOAD_URL=https://registrationcenter-download.intel.com/akdlm/IRC_NAS/oneapi/hpc/2025.3.1/online" >> $GITHUB_ENV
+
+      - name: Create metadata manifest
+        run: |
+          mkdir -p artifacts
+          cat <<EOF > artifacts/intel-oneapi-hpc-toolkit.json
+          {
+            "name": "Intel oneAPI HPC Toolkit",
+            "version": "${VERSION}",
+            "release_date": "${RELEASE_DATE}",
+            "size_mb": "${SIZE_MB}",
+            "sha384": "${SHA384}",
+            "download_url": "${DOWNLOAD_URL}",
+            "notes": "Functional and security updates included. Update recommended."
+          }
+          EOF
+
+      - name: Upload metadata artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: intel-oneapi-hpc-toolkit
+          path: artifacts/intel-oneapi-hpc-toolkit.json
