@@ -1,0 +1,11 @@
+{
+  "node_id": "12D3KooWMBGemECb3926rg8h7HXzYXyTs5tSo1F8wqPwq6EqeJU7",
+  "presence_mode": "signal",
+  "binding_state": "sovereign",
+  "origin_capsule": "OC-0",
+  "constitution_root_cid": "bafybeiczsscdsbs7ffqz55asqdf3smv6klcw3gofszvwlyarci47bgf354",
+  "enforcement": {
+    "must_match_cid": true,
+    "reject_if_mismatch": true
+  }
+}
