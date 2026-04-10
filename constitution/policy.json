@@ -1,7 +1,5 @@
 {
-  "allow_configs": [
-    "bafybeiczsscdsbs7ffqz55asqdf3smv6klcw3gofszvwlyarci47bgf354"
-  ],
+  "allow_configs": ["bafybeiczsscdsbs7ffqz55asqdf3smv6klcw3gofszvwlyarci47bgf354"],
   "rules": {
     "run_state_only_if_constitution_cid_matches": "bafybeiczsscdsbs7ffqz55asqdf3smv6klcw3gofszvwlyarci47bgf354",
     "reject_if_constitution_cid_differs": true
