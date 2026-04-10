@@ -1,0 +1,58 @@
+name: BlackCorp Constitutional Auto‑Inscription
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "constitution/**"
+      - "docs/**"
+      - "identity/**"
+
+jobs:
+  inscribe:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install IPFS Kubo
+      run: |
+        wget https://dist.ipfs.tech/kubo/v0.29.0/kubo_v0.29.0_linux-amd64.tar.gz --no-check-certificate
+        tar -xzf kubo_v0.29.0_linux-amd64.tar.gz
+        sudo bash kubo/install.sh
+        ipfs init
+
+    - name: Add constitutional payload to IPFS
+      id: add
+      run: |
+        CID=$(ipfs add --cid-version=1 -r constitution docs identity | tail -n1 | awk '{print $2}')
+        echo "cid=$CID" >> $GITHUB_OUTPUT
+
+    - name: Pin CID to Pinata
+      env:
+        PINATA_JWT: ${{ secrets.PINATA_JWT }}
+      run: |
+        curl -X POST "https://api.pinata.cloud/pinning/pinByHash" \
+          -H "Authorization: Bearer $PINATA_JWT" \
+          -H "Content-Type: application/json" \
+          -d "{\"hashToPin\":\"${{ steps.add.outputs.cid }}\"}"
+
+    - name: Update manifest.json
+      run: |
+        cat << EOF > constitution/manifest.json
+        {
+          "origin_capsule": "OC-0",
+          "constitution_root_cid": "${{ steps.add.outputs.cid }}",
+          "version": "SIL-1",
+          "pillars": ["P1","P2","P3","P4","P5"]
+        }
+        EOF
+
+    - name: Commit updated manifest
+      run: |
+        git config --global user.name "BlackCorp-Automaton"
+        git config --global user.email "actions@github.com"
+        git add constitution/manifest.json
+        git commit -m "Auto-update manifest with new constitutional CID" || echo "No changes to commit"
+        git push
