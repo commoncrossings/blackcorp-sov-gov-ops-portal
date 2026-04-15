@@ -1,0 +1,32 @@
+myQA:
+  Platform: MQ00-000
+  Cockpit: MQ01-000
+  Accept:
+    code: MQ04-001
+    licenses: 5
+  Accept_SMARTSCAN:
+    code: MQ05-000
+    licenses: 5
+
+SMARTSCAN:
+  tank:
+    code: SC02-000
+    scanning_volume: [480, 480, 410]
+    accuracy: ±0.1 mm
+    resolution: 0.1 mm
+    sensor: magnetostrictive
+
+BluePhantom2:
+  code: NP01-001
+  scanning_volume: [480, 480, 410]
+  accuracy: ±0.1 mm
+
+BluePhantom_COMPACT:
+  scanning_area: [480, 410]
+  tank_dimensions: [645, 407, 550]
+  volume_l: 116
+
+Upgrades:
+  SMARTSCAN: [SC01-500, SC01-501, SC01-502]
+  BluePhantom2: [NU01-001, NU01-501]
+  CCU: [CU06-000]
