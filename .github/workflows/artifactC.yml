@@ -1,0 +1,32 @@
+{
+  "ENU0_anchor": "29.6990640,-95.3834309",
+  "capsules": {
+    "WP.SMARTSCAN": {
+      "id": "SC02-000",
+      "mesh": "water_phantom.3D",
+      "volume_mm": [480,480,410],
+      "sensor": "magnetostrictive",
+      "precision_mm": 0.1
+    },
+    "WP.BP2": {
+      "id": "NP01-001",
+      "mesh": "water_phantom.3D",
+      "volume_mm": [480,480,410],
+      "precision_mm": 0.1
+    },
+    "WP.COMPACT": {
+      "id": "COMPACT",
+      "mesh": "water_phantom.2D",
+      "area_mm": [480,410],
+      "tank_mm": [645,407,550]
+    },
+    "SW.myQA.Accept": {
+      "id": "MQ04-001",
+      "licenses": 5
+    },
+    "SW.myQA.SMARTSCAN": {
+      "id": "MQ05-000",
+      "licenses": 5
+    }
+  }
+}
