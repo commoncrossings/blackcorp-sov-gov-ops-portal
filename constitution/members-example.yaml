@@ -1,0 +1,21 @@
+version: 1
+description: >
+  Example member records for the BlackCorp constitutional model.
+  Illustrative only; not tied to real persons.
+
+members:
+  - cid: CID-OMEGA-0001
+    origin_jurisdiction: US-TX
+    origin_basis: US-Constitution + UDHR
+    elastic_rights_profile: ERP.US.UDHR
+    status: active
+    created_at: 2026-04-16T00:00:00Z
+    updated_at: 2026-04-16T00:00:00Z
+
+  - cid: CID-OMEGA-0002
+    origin_jurisdiction: NG
+    origin_basis: UDHR + ICCPR
+    elastic_rights_profile: ERP.UDHR.GLOBAL
+    status: active
+    created_at: 2026-04-16T00:00:00Z
+    updated_at: 2026-04-16T00:00:00Z
