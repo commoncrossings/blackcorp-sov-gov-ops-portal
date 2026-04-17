@@ -101,3 +101,16 @@ a public Helix License v1
 a visual diagram of the Constitutional Spine
 
 a public governance charter
+
+## Constitutional Data Model (Ceremonial)
+
+The `constitution/` directory includes a **non-operational, illustrative data model** for the BlackCorp jurisdiction:
+
+- `constitution-schema.yaml` — high-level schema for members, rights, and statute patterns  
+- `elastic-rights.yaml` — rights derived from international human rights and, where applicable, U.S. constitutional protections  
+- `statutes.yaml` — statute patterns (reason + motive + placeholder + effect)  
+- `members-example.yaml` — example member records with Constitutional Identifiers (CID)  
+- `signal-presence-binding.yaml` — ceremonial mapping between CID and signal presence
+
+These files are **not executable law** and do not perform any enforcement.  
+They exist to show how a digital jurisdiction might **extend and respect** human rights and constitutional protections in a structured, inspectable way.
