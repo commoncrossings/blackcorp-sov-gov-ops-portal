@@ -1,0 +1,129 @@
+version: 1
+description: >
+  Ceremonial constitutional data schema for BlackCorp sovereign governance portal.
+  Non-operational, illustrative only.
+
+entities:
+  member:
+    description: >
+      A constitutional subject represented by a CID (Constitutional Identifier).
+    fields:
+      cid:
+        type: string
+        description: Globally unique Constitutional Identifier (CID-Ω).
+      origin_jurisdiction:
+        type: string
+        description: Birth or primary civil jurisdiction (e.g., "US-TX", "FR", "NG").
+      origin_basis:
+        type: string
+        description: Legal basis at origin (e.g., "US Constitution", "UDHR", "ICCPR").
+      elastic_rights_profile:
+        type: string
+        description: Reference to an elastic rights profile id.
+      status:
+        type: string
+        enum: [active, suspended, archived]
+        description: Ceremonial membership status.
+      created_at:
+        type: datetime
+      updated_at:
+        type: datetime
+
+  elastic_rights_profile:
+    description: >
+      A bundle of rights extended from origin jurisdiction into the BlackCorp
+      sovereign constitutional envelope.
+    fields:
+      id:
+        type: string
+      label:
+        type: string
+        description: Human-readable name (e.g., "US-UDHR-BASELINE").
+      sources:
+        type: list
+        items:
+          type: string
+        description: >
+          References to instruments (e.g., "UDHR", "ICCPR", "US-1st-Amendment").
+      rights:
+        type: list
+        items:
+          $ref: right
+
+  right:
+    description: >
+      A single right, derived from international human rights or constitutional law,
+      expressed in a normalized, ceremonial form.
+    fields:
+      id:
+        type: string
+        description: Internal right identifier (e.g., "RIGHT.EXPRESSION").
+      source:
+        type: string
+        description: Source instrument (e.g., "UDHR-19", "US-1st-Amendment").
+      title:
+        type: string
+      description:
+        type: string
+      scope:
+        type: string
+        description: >
+          Context where this right is recognized (e.g., "speech", "association",
+          "privacy", "due-process").
+      non_derogable:
+        type: boolean
+        description: >
+          True if the right is generally considered non-derogable under
+          international human rights law.
+
+  statute_pattern:
+    description: >
+      A ceremonial statute pattern: reason + motive + placeholder + effect.
+      This is not executable law; it is a structured description.
+    fields:
+      id:
+        type: string
+      label:
+        type: string
+      reason:
+        type: string
+        description: >
+          The constitutional or human-rights basis for the statute.
+      motive:
+        type: string
+        description: >
+          The protective or governance motive (e.g., "protect dignity",
+          "preserve due process").
+      placeholder:
+        type: string
+        description: >
+          A symbolic slot for future, jurisdiction-specific implementation details.
+      effect:
+        type: string
+        description: >
+          The intended constitutional effect in ceremonial terms
+          (e.g., "recognize", "affirm", "require review").
+      linked_rights:
+        type: list
+        items:
+          type: string
+        description: >
+          IDs of rights that this statute pattern references or reinforces.
+
+  signal_presence_binding:
+    description: >
+      Ceremonial binding between a CID and a signal presence record.
+      Mirrors signal-presence.json conceptually.
+    fields:
+      id:
+        type: string
+      cid:
+        type: string
+      signal_ref:
+        type: string
+        description: Reference to a signal presence object.
+      mode:
+        type: string
+        enum: [informational, ceremonial]
+      created_at:
+        type: datetime
