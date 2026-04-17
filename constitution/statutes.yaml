@@ -1,0 +1,51 @@
+version: 1
+description: >
+  Ceremonial statute patterns for the BlackCorp sovereign constitution.
+  Each statute is a pattern: reason + motive + placeholder + effect.
+  Non-operational, non-enforcement, illustrative only.
+
+statutes:
+  - id: STATUTE.IDENTITY.CONTINUITY
+    label: Identity continuity and non-detachment
+    reason: >
+      Derived from dignity and legal personality principles in international human rights law.
+    motive: >
+      Preserve continuity of constitutional identity (CID) and prevent arbitrary detachment or erasure.
+    placeholder: >
+      Implementation details for how continuity is honored in specific technical systems.
+    effect: >
+      Recognize that each CID represents a continuous subject whose constitutional presence
+      cannot be arbitrarily revoked within this jurisdiction.
+    linked_rights:
+      - RIGHT.DUE_PROCESS
+      - RIGHT.EQUAL_PROTECTION
+
+  - id: STATUTE.PRIVACY.SIGNAL_PRESENCE
+    label: Privacy in signal presence binding
+    reason: >
+      Rooted in privacy protections under UDHR-12 and related instruments.
+    motive: >
+      Ensure that any binding between CID and signal presence respects privacy and proportionality.
+    placeholder: >
+      Specific data minimization and access control rules to be defined by future governance.
+    effect: >
+      Require that any use of signal presence data be subject to constitutional review,
+      with a presumption in favor of privacy and minimal disclosure.
+    linked_rights:
+      - RIGHT.PRIVACY
+      - RIGHT.DUE_PROCESS
+
+  - id: STATUTE.AUDIT.TRANSPARENCY
+    label: Auditability and transparency of constitutional actions
+    reason: >
+      Derived from principles of accountability and rule of law.
+    motive: >
+      Provide a clear, inspectable trail of constitutional decisions and transformations.
+    placeholder: >
+      Concrete logging formats, retention periods, and public reporting mechanisms.
+    effect: >
+      Require that constitutional transformations (e.g., changes to profiles, statutes, or rights)
+      be recorded in an auditable, human-readable form.
+    linked_rights:
+      - RIGHT.DUE_PROCESS
+      - RIGHT.EQUAL_PROTECTION
