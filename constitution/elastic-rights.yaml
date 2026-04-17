@@ -1,0 +1,69 @@
+version: 1
+description: >
+  Ceremonial elastic rights profiles for BlackCorp jurisdiction.
+  Derived from international human rights and, where applicable, U.S. constitutional protections.
+
+rights:
+  - id: RIGHT.EXPRESSION
+    source: UDHR-19
+    title: Freedom of expression
+    description: >
+      Everyone has the right to freedom of opinion and expression.
+    scope: speech
+    non_derogable: false
+
+  - id: RIGHT.PRIVACY
+    source: UDHR-12
+    title: Privacy and family life
+    description: >
+      No one shall be subjected to arbitrary interference with privacy, family, home or correspondence.
+    scope: privacy
+    non_derogable: false
+
+  - id: RIGHT.DUE_PROCESS
+    source: ICCPR-14
+    title: Due process and fair hearing
+    description: >
+      Everyone shall be entitled to a fair and public hearing by a competent, independent and impartial tribunal.
+    scope: due-process
+    non_derogable: false
+
+  - id: RIGHT.EQUAL_PROTECTION
+    source: US-14th-Amendment
+    title: Equal protection of the laws
+    description: >
+      No state shall deny to any person within its jurisdiction the equal protection of the laws.
+    scope: equality
+    non_derogable: false
+
+  - id: RIGHT.SPEECH_US
+    source: US-1st-Amendment
+    title: Freedom of speech (U.S. constitutional context)
+    description: >
+      Congress shall make no law abridging the freedom of speech.
+    scope: speech
+    non_derogable: false
+
+elastic_rights_profiles:
+  - id: ERP.UDHR.GLOBAL
+    label: Global baseline (UDHR + ICCPR)
+    sources:
+      - UDHR
+      - ICCPR
+    rights:
+      - RIGHT.EXPRESSION
+      - RIGHT.PRIVACY
+      - RIGHT.DUE_PROCESS
+
+  - id: ERP.US.UDHR
+    label: U.S. origin + UDHR baseline
+    sources:
+      - UDHR
+      - ICCPR
+      - US-Constitution
+    rights:
+      - RIGHT.EXPRESSION
+      - RIGHT.PRIVACY
+      - RIGHT.DUE_PROCESS
+      - RIGHT.EQUAL_PROTECTION
+      - RIGHT.SPEECH_US
