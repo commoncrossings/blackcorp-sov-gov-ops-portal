@@ -1,0 +1,13 @@
+version: 1
+description: >
+  Ceremonial mapping between constitutional identifiers (CID) and signal presence records.
+  Non-operational; expresses that any such binding is constitutionally constrained.
+
+bindings:
+  - id: SPB-0001
+    cid: CID-OMEGA-0001
+    signal_ref: SIGNAL-PRESENCE-EXAMPLE-01
+    mode: informational
+    notes: >
+      Illustrative binding showing that any signal presence is conceptually tied
+      to a constitutional subject and must respect privacy and due process.
