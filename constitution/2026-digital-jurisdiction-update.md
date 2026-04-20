@@ -186,3 +186,5 @@ A continuity and identity‑protection system
 A cross‑jurisdictional collaboration framework
 
 A unified, legally coherent operational structure
+
+Updated README and constitutional framework to include jurisdiction extension, NDA integration, and automated registry pipeline.
