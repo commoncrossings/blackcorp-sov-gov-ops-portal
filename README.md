@@ -114,3 +114,9 @@ The `constitution/` directory includes a **non-operational, illustrative data mo
 
 These files are **not executable law** and do not perform any enforcement.  
 They exist to show how a digital jurisdiction might **extend and respect** human rights and constitutional protections in a structured, inspectable way.
+
+## 2026 Jurisdictional Update
+See `constitution/2026-digital-jurisdiction-update.md` for the latest
+expansion of the VINCULUM, O.N.E., S‑CACE, NDA integration, and
+Digital Sovereign Jurisdiction doctrine.
+
