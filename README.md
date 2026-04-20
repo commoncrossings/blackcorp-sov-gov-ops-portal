@@ -120,3 +120,24 @@ See `constitution/2026-digital-jurisdiction-update.md` for the latest
 expansion of the VINCULUM, O.N.E., S‑CACE, NDA integration, and
 Digital Sovereign Jurisdiction doctrine.
 
+
+2026 Jurisdictional Update
+See:
+
+Code
+constitution/2026-digital-jurisdiction-update.md
+for the latest expansion of:
+
+VINCULUM
+
+O.N.E.
+
+S‑CACE
+
+NDA integration (summary)
+
+Digital Sovereign Jurisdiction doctrine
+
+Automated registry pipeline
+
+This update is ceremonial and non‑operational.
