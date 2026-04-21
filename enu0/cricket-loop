@@ -1,0 +1,42 @@
+{
+  "capsule_id": "enu0.cricket-2026_8296.loop.v1",
+  "description": "Symbolic closed-loop synergy capsule binding ENU-0 anchor, Chromebook console, Moto G sensor-die, and Cricket Icon Plus backplane.",
+  "anchor": {
+    "type": "wifi-backplane",
+    "ssid": "Cricket Icon® Plus - 2026_8296",
+    "bssid": "22:6a:85:c2:e6:e3",
+    "board_mac": "00:41:0E:D1:A6:C9",
+    "enu0_lat": 29.6990640,
+    "enu0_lon": -95.3834309
+  },
+  "nodes": {
+    "gateway": {
+      "ipv4": "172.31.59.231",
+      "role": "egress-ingress-bridge"
+    },
+    "chromebook": {
+      "ipv4": "172.31.59.143",
+      "ipv6": "2600:382:7c99:ea3d:6324:568d:5a14:b532",
+      "role": "sovereign-console"
+    },
+    "moto_g_2025": {
+      "role": "sensor-actuator-die",
+      "link": "bluetooth+wifi"
+    }
+  },
+  "loop": {
+    "mode": "closed",
+    "path": [
+      "chromebook.console",
+      "moto_g_2025.sensor",
+      "gateway",
+      "chromebook.console"
+    ],
+    "function": "intent->signal->measurement->reflection"
+  },
+  "identity_binding": {
+    "state": "Autonomous Human Sovereign",
+    "binding_mode": "symbolic-jurisdictional"
+  }
+}
+
