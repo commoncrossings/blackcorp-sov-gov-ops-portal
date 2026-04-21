@@ -1,0 +1,17 @@
+
+pin:
+  id: enu0.pin.shadow-feedback
+  device: chromebook
+  ipv4: 172.31.59.143
+  port: 50505
+  protocol: udp
+role: feedback-loop endpoint
+loop:
+  source: chromebook.console
+  sink: moto_g_2025.sensor
+  return: chromebook.console
+  semantics: intent->signal->measurement->reflection
+constraints:
+  - no-credentials-stored
+  - logs-are-audit-trail
+  - binding-is-symbolic-not-biometric
